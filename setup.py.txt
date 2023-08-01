@@ -1,0 +1,18 @@
+import setuptools
+
+
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name='HMC5883L',
+    version='1.0',
+    author='thomdag'
+    description='Python library for the magnetometer HMC5883L'
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url='https://github.com/thomdag/HMC5883L_Raspberry_Pi_Python_library'
+    license='MIT',
+    packages=['HMC5883L'],
+
+)
