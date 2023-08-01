@@ -21,22 +21,21 @@ Startup loads the default starting settings, as recommend by the manual on the H
 
 Here's a simple example to get started:
 
-python
+>
+> from hmc5883l import HMC5883L
+> 
+> Create an instance of the HMC5883L class
+> 
+> sensor = HMC5883L()
+>
+> try:
+>     while True:
+>         # Get the magnetic field data
+>         x, y, z = sensor.get_magnetic_data()
+>         print(f"Magnetic Field (X, Y, Z): ({x}, {y}, {z}) uT")
+> except KeyboardInterrupt:
+>     print("Measurement stopped by the user.")
 
-from hmc5883l import HMC5883L
-
-# Create an instance of the HMC5883L class
-'''
-sensor = HMC5883L()
-
-try:
-    while True:
-        # Get the magnetic field data
-        x, y, z = sensor.get_magnetic_data()
-        print(f"Magnetic Field (X, Y, Z): ({x}, {y}, {z}) uT")
-except KeyboardInterrupt:
-    print("Measurement stopped by the user.")
-'''
 # Modify the settings:
 The following methods are available:
 - set_continuous_config(samples_per_measurement, measurement_frequency, measurement_bias, gain_factor): Sets the continuous measurement configuration. Pass None for any setting you want to keep unchanged.
